@@ -1,4 +1,5 @@
 /*JavaScript Version 1 */
+
 const categories = {
   html: [
     {
@@ -14,12 +15,12 @@ const categories = {
     {
       question: "What is a Tag",
       answer:
-        "Tags are used to define elements in HTML. They consist of an opening tag, content, and a closing tag.<br> Ex. &lt;h1&gt; is the opening tag for a top-level heading.",
+        "Used to define elements in HTML, <br><b>tags</b>  consist of an opening &lt;tag&gt;, content, and a closing &lt;/tag&gt;.<br><br> <b>Ex.</b> &lt;h1&gt; is the opening tag for a top-level heading.",
     },
     {
       question: "What is an Attribute",
       answer:
-        'Attributes provide additional information about HTML elements and are always included in the opening tag. <br> Ex. &lt;a href="https://qarli.ca"&gt; uses the href attribute.',
+        'Included in the opening tag, <br><b>Attribbutes</b> provide additional information about HTML elements.<br><br> <b>Ex.</b>&lt;a <b>href=</b>"https://qarli.ca"&gt; <br><br><b>uses the href attribute.</b>',
     },
     {
       question: "What is a DOCTYPE Declaration",
@@ -28,16 +29,20 @@ const categories = {
     },
   ],
   css: [
-    { question: "What is CSS", answer: "Answer 1 CSS" },
+    {
+      question: "What is CSS",
+      answer:
+        "Cascading Style Sheet <b>( CSS )</b> <br>is used to define styles for your web pages.<br><br>This includes the design, layout and variations in display for different devices and screen sizes.",
+    },
     {
       question: "What is a Selector",
       answer:
-        "Selectors are patterns that are used to select and style HTML elements. <br>They define the target elements for applying styles. <br>Ex. .class or #id",
+        "Selectors are patterns that are used to select and style HTML elements.<br> <br>They define the<b> target elements </b>for applying styles. <br><br><b>Ex.</b> .class or #id",
     },
     {
       question: "What are Properties in css",
       answer:
-        "CSS properties define the visual style of selected elements.<br> They include attributes like color, font-size, margin, padding, etc.",
+        "CSS properties define the visual style of selected elements.<br><br> They include attributes like color, font-size, margin, padding, etc.",
     },
   ],
   javascript: [
@@ -48,12 +53,12 @@ const categories = {
     {
       question: "What is a variable",
       answer:
-        "Variables are containers for storing data values. <br>Ex. let x = 7",
+        "Variables are containers for storing data values. <br><br>Ex. let x = 7",
     },
     {
       question: "What are Data Types",
       answer:
-        "JavaScript has several data types, including Number, String, Boolean, Object, and Array. <br> Ex. let name = 'Carla'; let age = 25; let isStudent = true;",
+        "<b>JavaScript has several data types:</b> <br> Number, String, Boolean, Object, and Array. <br><br> <b>Ex.</b> let name = 'Carla';<br> let age = 25;<br> let isStudent = true;",
     },
   ],
 };
@@ -84,7 +89,7 @@ function startGame() {
   if (selectedCategory) {
     currentCategory = selectedCategory;
     currentQuestionIndex = 0;
-    changeBackgroundColor();
+    // changeBackgroundColor();
     displayCurrentQuestion();
   } else {
     alert("Please select a category before starting the game.");

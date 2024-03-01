@@ -5,14 +5,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
-    <title>Web Dev StudyMate v. 0.1</title>
+    <title>WEB DEV STUDYMATE v 0.1</title>
   </head>
   <body>
     <div id="welcome">
-      <h1>
-        Welcome to <br />Web Dev. StudyMate<br />
-        v. 0.1
-      </h1>
+      <h1>WEB DEV STUDYMATE</h1>
     </div>
 
     <fieldset id="category-selection">
@@ -33,14 +30,14 @@
           value="javascript"
         /><label for="javascript">JavaScript</label><br />
       </div>
-      <button onclick="startGame()">Begin Study</button>
     </fieldset>
+    <button type="button" onclick="startGame()">Begin Study</button>
 
     <div id="flashcard-container">
       <!-- Questions or answers will be displayed here -->
       <div class="flashcard"></div>
     </div>
-    <div>
+    <div class="navigation">
       <button id="prev-button" onclick="goToPreviousQuestion()" disabled>
         Previous
       </button>
