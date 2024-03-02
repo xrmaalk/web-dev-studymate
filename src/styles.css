@@ -10,8 +10,9 @@ html {
   background-repeat: no-repeat;
   background-position-y: top;
   background-position-x: center;
+  background-color: rgba(255, 182, 193, 0.95);
   color: black;
-  background-color: lightpink;
+  border-radius: 2rem;
   margin: 0;
 }
 body {
@@ -23,8 +24,9 @@ body {
 h1 {
   width: 100%;
   text-align: center;
-  color: rgba(137, 43, 226, 0.5);
-  font-weight: 900;
+  color: rgba(9, 3, 14, 0.785);
+  font-weight: bold;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
 
 #category-selection {
@@ -32,13 +34,15 @@ h1 {
 }
 
 button {
-  margin: 5px;
+  margin: 0.2rem;
+  font-weight: bold;
+  color: rgb(18, 18, 17);
 }
 
 .flashcard {
   padding: 2%;
   margin: 0;
-  color: rgb(166, 42, 194);
+  color: rgb(12, 4, 14);
   text-align: center;
   justify-content: center;
   align-items: center;
@@ -49,10 +53,9 @@ button {
   margin-top: 0.25rem;
   height: 11rem;
   width: 100%;
-  background-color: rgb(250 250 250 / 50%);
-  border: 1% solid #cccccc;
+  background-color: rgb(250 250 250 /50%);
+  border: 2% solid #cccccc;
   border-radius: 5px;
-  opacity: 100%;
 }
 
 .navigation {
@@ -63,6 +66,66 @@ button {
   justify-content: center;
   align-items: center;
   margin: 0.5rem 1rem 0rem 1rem;
+}
+#html5 {
+  width: 1.5rem;
+  height: 2rem;
+  margin-left: 3rem;
+  margin-top: 0.15rem;
+  margin-bottom: 0.2rem;
+  background-color: none;
+  border-radius: 0.5rem 0.2rem 1rem;
+}
+#css3 {
+  width: 1.5rem;
+  height: 2rem;
+  margin-left: 3.75rem;
+  margin-top: 0.15rem;
+  margin-bottom: 0.2rem;
+  background-color: none;
+  border-radius: 0.5rem 0.2rem 1rem;
+}
+#js {
+  width: 1.5rem;
+  height: 2rem;
+  margin-left: 0.8rem;
+  margin-top: 0.25rem;
+  margin-bottom: 0.2rem;
+  background-color: none;
+  border-radius: 0.5rem 0.2rem 1rem;
+}
+.cat-label {
+  font-weight: bold;
+}
+
+.button1 {
+  background-color: #86cae1;
+  border-radius: 2rem;
+
+  padding: 0.5rem;
+  cursor: pointer;
+}
+.button2 {
+  background-color: #8bfe08;
+
+  border-radius: 2rem;
+
+  padding: 0.5rem;
+  cursor: pointer;
+} /* Blue */
+
+.button3 {
+  background-color: #008cba;
+  border-radius: 2rem;
+
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+#typing-text {
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid #000;
 }
 
 /* CSS Version 0

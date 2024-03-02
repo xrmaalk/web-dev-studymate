@@ -1,21 +1,68 @@
-// Input Data for Language Concept
-export function appContent() {
-  const htmlData = {};
+/*** INPUT DATA FOR LANGUAGE CONCEPTS  ***/
+const categories = {
+  html: [
+    {
+      question: "What is HTML",
+      answer:
+        "Hypertext Markup Language <br>( HTML ) <br>is the standard markup language for creating web pages.<br> It structures content using a system of elements and tags.",
+    },
+    {
+      question: "What is an Element",
+      answer:
+        "An element is a fundamental component in HTML, represented by a start tag, content, and an end tag.<br> Ex. &lt;p&gt; for paragraphs and &lt;img&gt;  for images.",
+    },
+    {
+      question: "What is a Tag",
+      answer:
+        "Used to define elements in HTML, <br><b>tags</b>  consist of an opening &lt;tag&gt;, content, and a closing &lt;/tag&gt;.<br><br> <b>Ex.</b> &lt;h1&gt; is the opening tag for a top-level heading.",
+    },
+    {
+      question: "What is an Attribute",
+      answer:
+        'Included in the opening tag, <br><b>Attribbutes</b> provide additional information about HTML elements.<br><br><a href=https://qarli.ca> <b>Ex.</b> &lt;a <b>href=</b>"https://qarli.ca"&gt;</a> <br><br><b>uses the href attribute.</b>',
+    },
+    {
+      question: "What is a DOCTYPE Declaration",
+      answer:
+        "The DOCTYPE declaration specifies the HTML version being used by the document and helps browsers to render the page correctly. <br> Ex. &lt;DOCTYPE html&gt;",
+    },
+  ],
+  css: [
+    {
+      question: "What is CSS",
+      answer:
+        "Cascading Style Sheet <b>( CSS )</b> <br>is used to define styles for your web pages.<br><br>This includes the design, layout and variations in display for different devices and screen sizes.",
+    },
+    {
+      question: "What is a Selector",
+      answer:
+        "Selectors are patterns that are used to select and style HTML elements.<br> <br>They define the<b> target elements </b>for applying styles. <br><br><b>Ex.</b> .class or #id",
+    },
+    {
+      question: "What are Properties in css",
+      answer:
+        "CSS properties define the visual style of selected elements.<br><br> They include attributes like color, font-size, margin, padding, etc.",
+    },
+  ],
+  javascript: [
+    {
+      question: "What is JavaScript",
+      answer: "JavaScript is an highlevel programming language.",
+    },
+    {
+      question: "What is a variable",
+      answer:
+        "Variables are containers for storing data values. <br><br>Ex. let x = 7",
+    },
+    {
+      question: "What are Data Types",
+      answer:
+        "<b>JavaScript has several data types:</b> <br> Number, String, Boolean, Object, and Array. <br><br> <b>Ex.</b> let name = 'Carla';<br> let age = 25;<br> let isStudent = true;",
+    },
+  ],
+};
 
-  const javascriptData = { concept: "explanation", concept_2: "explanation_2" };
-
-  const cssData = { concept: "explanation", concept_2: "explanation_2" };
-
-  class FlashCard {
-    constructor(lesson) {
-      this.concept = lesson;
-    }
-    question() {
-      return this.concept;
-    }
-  }
-}
-
+export default categories;
 /**
  * HTML CONTENT
  * HTML (Hypertext Markup Language):

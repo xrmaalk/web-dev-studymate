@@ -1,4 +1,16 @@
-/*JavaScript Version 1 */
+// import categories from "../data/inputData";
+
+let currentCategory = "";
+let currentQuestionIndex = 0;
+
+// Text to be typed
+let textToType = "Test";
+
+// Speed of typing (in milliseconds)
+const typingSpeed = 50;
+
+// Element to display the typing effect
+const typingDiv = document.getElementById("typing-text");
 
 const categories = {
   html: [
@@ -20,7 +32,7 @@ const categories = {
     {
       question: "What is an Attribute",
       answer:
-        'Included in the opening tag, <br><b>Attribbutes</b> provide additional information about HTML elements.<br><br> <b>Ex.</b>&lt;a <b>href=</b>"https://qarli.ca"&gt; <br><br><b>uses the href attribute.</b>',
+        'Included in the opening tag, <br><b>Attribbutes</b> provide additional information about HTML elements.<br><br><a href=https://qarli.ca> <b>Ex.</b> &lt;a <b>href=</b>"https://qarli.ca"&gt;</a> <br><br><b>uses the href attribute.</b>',
     },
     {
       question: "What is a DOCTYPE Declaration",
@@ -63,18 +75,6 @@ const categories = {
   ],
 };
 
-let currentCategory = "";
-let currentQuestionIndex = 0;
-
-/*
-function startGame() {
-  const categoryDropdown = document.getElementById("category-selecton");
-  currentCategory = categoryDropdown.value;
-  currentQuestionIndex = 0;
-  changeBackgroundColor();
-  displayCurrentQuestion();
-}
-*/
 function startGame() {
   const categoryRadios = document.getElementsByName("action");
   let selectedCategory;
@@ -118,9 +118,30 @@ function updateNavigationButtons() {
   const nextButton = document.getElementById("next-button");
 
   prevButton.disabled = currentQuestionIndex === 0;
-  answerButton.disabled = false; // Enable the show answer button
+  if (prevButton.disabled === true) {
+    prevButton.style.cursor = "not-allowed";
+  } else {
+    prevButton.style.cursor = "pointer";
+  }
+  answerButton.disabled = false;
   nextButton.disabled =
     currentQuestionIndex === categories[currentCategory].length - 1;
+  if (nextButton.disabled === true) {
+    nextButton.style.cursor = "not-allowed";
+  } else {
+    nextButton.style.cursor = "pointer";
+  }
+}
+
+function typeText(index) {
+  console.log("we are here.");
+  if (index < textToType.length) {
+    typingDiv.innerHTML += textToType.charAt(index);
+    index++;
+    setTimeout(function () {
+      typeText(index);
+    }, typingSpeed);
+  }
 }
 
 function displayAnswer() {
@@ -129,6 +150,7 @@ function displayAnswer() {
   const currentAnswer = selectedCategory[currentQuestionIndex].answer;
 
   flashcardContainer.innerHTML = `<div class="flashcard">${currentAnswer}</div>`;
+  typeText(0);
   updateNavigationButtons();
 }
 
