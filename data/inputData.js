@@ -26,6 +26,21 @@ const categories = {
       answer:
         "The DOCTYPE declaration specifies the HTML version being used by the document and helps browsers to render the page correctly. <br> Ex. &lt;DOCTYPE html&gt;",
     },
+    {
+      question: "What is a DOCTYPE Declaration",
+      answer:
+        "The DOCTYPE declaration specifies the HTML version being used by the document and helps browsers to render the page correctly. <br> Ex. &lt;DOCTYPE html&gt;",
+    },
+    {
+      question: "What is a DOCTYPE Declaration",
+      answer:
+        "The DOCTYPE declaration specifies the HTML version being used by the document and helps browsers to render the page correctly. <br> Ex. &lt;DOCTYPE html&gt;",
+    },
+    {
+      question: "What is a DOCTYPE Declaration",
+      answer:
+        "The DOCTYPE declaration specifies the HTML version being used by the document and helps browsers to render the page correctly. <br> Ex. &lt;DOCTYPE html&gt;",
+    },
   ],
   css: [
     {
@@ -68,60 +83,79 @@ export default categories;
  * HTML (Hypertext Markup Language):
 
 HTML is the standard markup language for creating web pages. It structures content using a system of elements and tags.
+
 Element:
 
 An element is a fundamental component in HTML, represented by a start tag, content, and an end tag. Examples include <p> for paragraphs and <img> for images.
+
 Tag:
 
 Tags are used to define elements in HTML. They consist of an opening tag, content, and a closing tag. For example, <h1> is the opening tag for a top-level heading.
+
 Attribute:
 
 Attributes provide additional information about HTML elements and are always included in the opening tag. For instance, <a href="https://example.com"> uses the href attribute.
+
 DOCTYPE Declaration:
 
 The DOCTYPE declaration specifies the HTML version being used by the document and helps browsers to render the page correctly.
+
 Head:
 
 The <head> section of an HTML document contains metadata, including the title, links to stylesheets, and other information that doesn't appear directly on the page.
+
 Body:
 
 The <body> element contains the content of the HTML document, such as text, images, links, and other elements that are displayed on the webpage.
+
 Heading Tags (h1 to h6):
 
-These tags (<h1> to <h6>) define headings of different levels, where <h1> is the highest level and <h6> is the lowest.
+Heading tags ( <b>&lt;h1&gt; to &lt;h6&gt;</b> ) define headings of different levels, where &lt;h1&gt; is the highest level and &lt;h6&gt is the lowest.
+
 Paragraph Tag (p):
 
-The <p> tag is used to define paragraphs in HTML, separating blocks of text.
+Separating blocks of text, the <b>&lt;p&gt;</b> is used to define paragraphs in HTML.
+
 Anchor Tag (a):
 
-The <a> tag creates hyperlinks, allowing users to navigate to other web pages or resources.
+The <b>&lt;a&gt;</b> tag creates hyperlinks, allowing users to navigate to other web pages or resources.
+
 Image Tag (img):
 
-The <img> tag embeds images into a webpage, with the src attribute specifying the image source.
+The <b>&lt;img&gt;</b> tag embeds images into a webpage, while the <b>src</b> attribute specifying the image source.
+
 List Tags (ul, ol, li):
 
-<ul> creates an unordered list, <ol> an ordered list, and <li> represents list items within these lists.
+<b>&lt;ul&gt;</b> tag creates an unordered list,<br/><b>&lt;ol&gt;</b> tag creates an ordered list, <br/> and <b>&lt;li&gt;</b> tag represents list items within these lists.
+
 Hyperlink (href):
 
-The href attribute in the <a> tag specifies the destination URL for hyperlinks.
+The <b>href</b> attribute in the <b>&lt;a&gt;</b> tag specifies the destination URL for hyperlinks.
+
 HTML Forms:
 
-HTML forms (<form>) are used to collect user input, such as text, checkboxes, and radio buttons.
+HTML forms ( <b>&lt;form&gt;</b> ) are used to collect user input, such as text, checkboxes, and radio buttons.
+
 Input Tags:
 
-<input> elements are used within forms to create fields for various types of user input, like text, password, checkbox, etc.
+<b>&lt;input&gt;</b> elements are used within forms to create fields for various types of user input such as text, password, checkbox, etc.
+
 Button Tag (button):
 
 The <button> tag creates clickable buttons, often used within forms.
+
 Div Tag (div):
 
-The <div> tag is a container used to group and structure content, often styled with CSS.
+The <b>&lt;div&gt;</b> tag is a container used to group and structure content in HTML.
+
 Span Tag (span):
 
 The <span> tag is an inline container used for applying styles or scripting to a specific portion of text.
+
 HTML Semantics:
 
-HTML5 introduced semantic elements like <header>, <nav>, <section>, <article>, <aside>, and <footer> to provide more meaning to the structure of a webpage.
+HTML5 introduced Semantic elements like &lt;header&gt;, &lt;nav&gt, &lt;section&gt, &lt;article&gt, &lt;aside&gt;, and &lt;footer&gt were introduce in which HTML version to provide more meaning to the structure of a webpage.
+
 HTML Comments:
 
 Comments (<!-- comment -->) are used to include remarks within the HTML code that are not displayed on the webpage but provide information for developers or editors.
@@ -141,7 +175,7 @@ Values:
 Description: Values are assigned to CSS properties and determine the specific style characteristics. For example, color: red; where "red" is the value.
 
 Box Model:
-Description: The box model consists of content, padding, border, and margin. It governs how space is distributed around and within an element.
+Description: The ______ model consists of content, padding, border, and margin. The _______ governs how space is distributed around and within an element.
 
 Layout:
 Description: Layout in CSS refers to the arrangement and positioning of elements on a webpage. Techniques include Flexbox and Grid.

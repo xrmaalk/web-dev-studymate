@@ -1,5 +1,11 @@
 {
+  "name": "wd-studymate",
+  "version": "0.0.1",
+  "type": "module",
   "devDependencies": {
     "tailwindcss": "^3.4.1"
+  },
+  "dependencies": {
+    "animejs": "^3.2.2"
   }
 }

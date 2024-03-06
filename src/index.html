@@ -4,6 +4,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <link rel="stylesheet" href="styles.css" />
     <link
       rel="stylesheet"
@@ -13,6 +14,7 @@
       rel="apple-touch-icon"
       sizes="180x180"
       href="./img/favicon_io/apple-touch-icon.png"
+      class="favicon-1"
     />
     <link
       rel="icon"
@@ -27,6 +29,7 @@
       href="./img/favicon_io/favicon-16x16.png"
     />
     <link rel="manifest" href="./img/favicon_io/site.webmanifest" />
+    <script type="text/javascript" src="index.js"></script>
     <title>WEB DEV STUDYMATE v 0.1</title>
   </head>
   <body>
@@ -80,9 +83,7 @@
         ><br />
       </div>
     </fieldset>
-    <button class="button1" type="button" onclick="startGame()">
-      Begin Study
-    </button>
+    <button class="button1" type="button" onclick="startGame()">BEGIN</button>
 
     <div id="flashcard-container">
       <!-- Questions or answers will be displayed here -->
@@ -90,12 +91,12 @@
     </div>
     <div class="navigation">
       <button
-        class="button1"
+        class="button3"
         id="prev-button"
         onclick="goToPreviousQuestion()"
         disabled
       >
-        Previous
+        PREV
       </button>
       <button
         class="button2"
@@ -103,7 +104,7 @@
         onclick="displayAnswer()"
         disabled
       >
-        Show Answer
+        REVEAL
       </button>
       <button
         class="button3"
@@ -111,60 +112,103 @@
         onclick="goToNextQuestion()"
         disabled
       >
-        Next
+        NEXT
       </button>
     </div>
 
-    <script type="text/javascript" src="index.js"></script>
+    <!-- 
+      Questions and Answer Content
+
+    <script type="text/javascript" src="../data/inputData.js"></script>
+    -->
   </body>
 </html>
 
-<!-- Version 0
-<!DOCTYPE html>
-<Choose lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./styles.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-    />
-    <title>Web Dev StudyMate 0.1</title>
-  </head>
-  <div>
-    <div id="WelcomeTitle">Welcome to<br/>Web Dev StudyMate 0.1 </div>
-  <div>
-    <br/>
-    Choose a Language to Begin</div>
-    <div>
-      <button type="button" id="HTML"><svg></svg></button>
-      <div id="CSS">CSS</div>
-      <div id="JavaScript">JavaScript</div>
-    </div>
-    <br>
-    <div
-      id="flashcard-container"
-      class="p-2 max-w-sm mx-auto bg-white rounded-xl shadow-lg flex text-center items-center space-x-2 shrink-2"
-    >
-      <div id="flashcard" class="shrink-2 text-center">
-        <div class="text-3xl font-bold" id="question">What is HTML</div>
-        <div id="answer" class="text-xl font-medium text-black text-nowrap">
-          Hyper Text Markup Language
+<!-- Animaejs Tester
+
+  <script
+      type="text/javascript"
+      src="../node_modules/animejs/lib/anime.min.js"
+    ></script>
+
+<div class="main-logo">
+    <div class="logo-animation-wrapper">
+      <div class="logo-animation">
+        <div class="anime-logo">
+          <div class="anime-logo-signs">
+            <div class="logo-letter letter-a">
+              <svg
+                class="bounced"
+                viewBox="0 0 200 240"
+                width="200"
+                height="240"
+              >
+                <path
+                  class="line"
+                  d="M30 20h130c9.996 0 10 40 10 60v140H41c-11.004 0-11-40-11-60s-.004-60 10-60h110"
+                />
+              </svg>
+            </div>
+            <div class="logo-letter letter-n">
+              <svg
+                class="bounced"
+                viewBox="0 0 200 240"
+                width="200"
+                height="240"
+              >
+                <path
+                  class="line"
+                  d="M170 220V60c0-31.046-8.656-40-19.333-40H49.333C38.656 20 30 28.954 30 60v160"
+                />
+              </svg>
+            </div>
+            <div class="logo-letter letter-i">
+              <svg class="bounced" viewBox="0 0 60 240" width="60" height="240">
+                <path class="line" d="M30 20v200" data-d2="M30 100v120" />
+              </svg>
+            </div>
+            <div class="logo-letter letter-m">
+              <svg
+                class="bounced"
+                viewBox="0 0 340 240"
+                width="340"
+                height="240"
+                fill="none"
+                fill-rule="evenodd"
+              >
+                <path
+                  class="line"
+                  d="M240,220 L240,60 C240,28.954305 231.344172,20 220.666667,20 C171.555556,20 254.832031,20 170,20 C85.1679688,20 168.444444,20 119.333333,20 C108.655828,20 100,28.954305 100,60 L100,220"
+                  data-d2="M310,220 L310,60 C310,28.954305 301.344172,20 290.666667,20 C241.555556,20 254.832031,110 170,110 C85.1679688,110 98.4444444,20 49.3333333,20 C38.6558282,20 30,28.954305 30,60 L30,220"
+                  data-d3="M310,220 L310,60 C310,28.954305 301.344172,20 290.666667,20 C241.555556,20 254.832031,20 170,20 C85.1679688,20 98.4444444,20 49.3333333,20 C38.6558282,20 30,28.954305 30,60 L30,220"
+                />
+              </svg>
+            </div>
+            <div class="logo-letter letter-e">
+              <svg
+                class="bounced"
+                viewBox="0 0 200 240"
+                width="200"
+                height="240"
+              >
+                <path
+                  class="line"
+                  d="M50 140h110c10 0 10-40 10-60s0-60-10-60H40c-10 0-10 40-10 60v80c0 20 0 60 10 60h130"
+                />
+              </svg>
+            </div>
+            <div class="bounce">
+              <svg viewBox="0 0 1000 260" width="1000" height="260" fill="none">
+                <path
+                  d="M630,240 C630,111.154418 608.971354,40 530.160048,40 C451.348741,40 430,127.460266 430,210"
+                />
+              </svg>
+              <div class="dot"></div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-    <div class="shrink-1">
-      <button id="show-answer">
-        <i class="h-12 w-12 far fa-hand-point-down"></i>
-      </button>
-      <button id="next-card">
-        <i class="far fa-hand-point-right"></i>
-      </button>
-    </div>
+  </div>
 
-    <input title="random" type="checkbox" />
-    <script src="index.js"></script>
-  </body>
-</html>
 -->
