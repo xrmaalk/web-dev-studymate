@@ -21,16 +21,68 @@
       "answer": "The DOCTYPE declaration specifies the HTML version being used by the document and helps browsers to render the page correctly. <br> Ex. &lt;DOCTYPE html&gt;"
     },
     {
-      "question": "What is a DOCTYPE Declaration",
-      "answer": "The DOCTYPE declaration specifies the HTML version being used by the document and helps browsers to render the page correctly. <br> Ex. &lt;DOCTYPE html&gt;"
+      "question": "What is the Head",
+      "answer": "The <b>&lt;head&gt;</b> section of an HTML document contains metadata, including the title, links to stylesheets, and other information that doesn't appear directly on the page."
     },
     {
-      "question": "What is a DOCTYPE Declaration",
-      "answer": "The DOCTYPE declaration specifies the HTML version being used by the document and helps browsers to render the page correctly. <br> Ex. &lt;DOCTYPE html&gt;"
+      "question": "What is the Body",
+      "answer": "The <b>&lt;body&gt;</b> element contains the content of the HTML document, such as text, images, links, and other elements that are displayed on the webpage."
     },
     {
-      "question": "What is a DOCTYPE Declaration",
-      "answer": "The DOCTYPE declaration specifies the HTML version being used by the document and helps browsers to render the page correctly. <br> Ex. &lt;DOCTYPE html&gt;"
+      "question": "What are Heading Tags",
+      "answer": "Heading tags ( <b>&lt;h1&gt; to &lt;h6&gt;</b> ) define headings of different levels, where &lt;h1&gt; is the highest level and &lt;h6&gt is the lowest."
+    },
+    {
+      "question": "What is the Paragraph tag ",
+      "answer": "Separating blocks of text, the <b>&lt;p&gt;</b> tag is used to define paragraphs in HTML."
+    },
+    {
+      "question": "What is the Anchor tag",
+      "answer": "The <b>&lt;a&gt;</b> tag creates hyperlinks, allowing users to navigate to other web pages or resources."
+    },
+    {
+      "question": "What is the Image Tag",
+      "answer": "The <b>&lt;img&gt;</b> tag embeds images into a webpage, while the <b>src</b> attribute specifying the image source."
+    },
+    {
+      "question": "What are List Tags (ul, ol, li)",
+      "answer": "<b>&lt;ul&gt;</b> tag creates an unordered list,<br/><b>&lt;ol&gt;</b> tag creates an ordered list, <br/> and <b>&lt;li&gt;</b> tag represents list items within these lists."
+    },
+    {
+      "question": "What is an Hyperlink ( href )",
+      "answer": "The <b>href</b> attribute in the <b>&lt;a&gt;</b> tag specifies the destination URL for hyperlinks."
+    },
+    {
+      "question": "What is a URL",
+      "answer": "<b>Unified Resource Locator </b> ( url ) is a human readable web address."
+    },
+    {
+      "question": "What are Forms",
+      "answer": "HTML forms ( <b>&lt;form&gt;</b> tag ) are used to collect user input.<br/><br/> <b>Ex.</b><br/>&lt;form&gt;<br/> input filed, textbox, checkboxes, radio buttons, submit <br/> &lt;/form&gt;"
+    },
+    {
+      "question": "What is an Input tag used for",
+      "answer": "<b>&lt;input&gt;</b> elements are used within forms to create fields for various types of user input such as text, password, checkbox, etc."
+    },
+    {
+      "question": "This tag creates clickable _______, often used within forms.",
+      "answer": "What is a <b>&lt;button&gt;</b> tag"
+    },
+    {
+      "question": "This tag is a container used to group and structure content in HTML.",
+      "answer": "What is a <b>&lt;div&gt;</b> tag"
+    },
+    {
+      "question": "This tag is an inline container used for applying styles or scripting to a specific portion of text.",
+      "answer": "What is the<b> &lt;span&gt; </b> tag. "
+    },
+    {
+      "question": "To provide more meaning to the structure of a webpage, semantic elements such as &lt;header&gt;, &lt;nav&gt, &lt;section&gt, &lt;article&gt, &lt;aside&gt;, and &lt;footer&gt were introduce in which HTML version ?",
+      "answer": "What is <b>HTML5</b>"
+    },
+    {
+      "question": "_______ are used to include remarks within HTML code that are visible only to developers and editors.",
+      "answer": "<br/>What are comments.<br/><br/><b>Ex.</b><br/><b>( &lt;!-- multiline comments --&gt; )</b> <br/><b>( // Single line comment )</b>"
     }
   ],
   "css": [
@@ -43,8 +95,36 @@
       "answer": "Selectors are patterns that are used to select and style HTML elements.<br> <br>They define the<b> target elements </b>for applying styles. <br><br><b>Ex.</b> .class or #id"
     },
     {
-      "question": "What are Properties in css",
-      "answer": "CSS properties define the visual style of selected elements.<br><br> They include attributes like color, font-size, margin, padding, etc."
+      "question": "In CSS ________ define the visual style of selected elements",
+      "answer": "What are Properties.<br><br> They include attributes like color, font-size, margin, padding, etc."
+    },
+    {
+      "question": "_______ are assigned to CSS properties to determine the specific style <b>characteristics</b>.",
+      "answer": "What are <b>values</b>. <br/><br/><b>Ex.</b><br/> color: red; width: 100%; height: 100vh;<br/><br/>Where 'red', '100%' and '100vh' are values."
+    },
+    {
+      "question": "The ______ model consists of content, padding, border, and margin. The _______ governs how space is distributed around and within an element.",
+      "answer": "What is the Box Model.<br/><br/><b>Ex.</b><br/>block boxes <br/>inline boxes"
+    },
+    {
+      "question": "_______ in CSS refers to the arrangement and positioning of elements on a webpage. ",
+      "answer": "<br/>What is the  <b>Layout</b>.<br/><br/><b>Ex.</b><br/><br/> Techniques include <b>Flexbox</b> and<b> Grid</b>  "
+    },
+    {
+      "question": "Particularly useful for one dimensional layouts, ________ is a layout model that allows for the creation of flexible and efficient layouts. ",
+      "answer": "What is <b>flexbox</b> "
+    },
+    {
+      "question": "CSS _______ is a two dimensional layout model. It allows for the creation of complex and responsive layouts with rows and columns. ",
+      "answer": " What is the <b>Grid</b> model. "
+    },
+    {
+      "question": "This style element determines the placement of elements on a web page. ",
+      "answer": "What is <b>Positioning</b><br/><br/><b>Ex.</b><br/>Common values include static, relative, absolute and fixed. "
+    },
+    {
+      "question": " ",
+      "answer": " "
     }
   ],
   "javascript": [
@@ -59,6 +139,18 @@
     {
       "question": "What are Data Types",
       "answer": "<b>JavaScript has several data types:</b> <br> Number, String, Boolean, Object, and Array. <br><br> <b>Ex.</b> let name = 'Carla';<br> let age = 25;<br> let isStudent = true;"
+    },
+    {
+      "question": "",
+      "answer": ""
+    },
+    {
+      "question": "",
+      "answer": ""
+    },
+    {
+      "question": "",
+      "answer": ""
     }
   ]
 }
