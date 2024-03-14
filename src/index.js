@@ -1,16 +1,15 @@
 //---------- GLOBAL VARIABLES -------------------//
 let currentQuestionIndex = 0;
 let selectedCategoryQuestions;
-let textToType = "Test"; // Text to be typed
 let availableQuestions;
 const typingSpeed = 50; //typing ( milliseconds)
-const typingDiv = document.getElementById("typing-text"); // Div for the typing effect
+
 let questions;
 let i = 0;
-let txt =
-  "Welcome to STUDYMATE, I'm Turtee de Turtle, your study buddy! Select a category to begin...";
+let txt = "Select a category to begin lesson.";
 
-let speed = 50; /* The speed/duration of the effect in milliseconds */
+let speed = 50;
+
 //----------------- INPUT DATA -----------------//
 
 async function fetchQuestions() {
@@ -18,6 +17,14 @@ async function fetchQuestions() {
   const questions = await response.json();
   // s
   return questions;
+}
+
+function answerWriter() {
+  if (i < txt.length) {
+    document.getElementById("flashcard-container").innerHTML += txt.charAt(i);
+    i++;
+    setTimeout(answerWriter, speed);
+  }
 }
 
 //------------- START GAME ----------------//
@@ -36,7 +43,6 @@ async function startGame(category) {
     if (selectedCategoryQuestions.length > 0) {
       updateQuestionDisplay();
       hideButton(category);
-      console.log("We are inside start game", category);
     } else {
       console.error(`No questions available for the category: ${category}`);
     }
@@ -51,21 +57,24 @@ async function startGame(category) {
 function updateQuestionDisplay() {
   const currentQuestion = selectedCategoryQuestions[currentQuestionIndex];
 
+  currentQuestion.answer;
+
   const questionContainer = document.getElementById("flashcard-container");
   questionContainer.innerHTML = `
     <h2 id="h2-tag">${currentQuestion.question}</h2>
-    <p id="p-tag">${currentQuestion.answer}</p>
+    <div id="p-tag">${currentQuestion.answer}</div>
   `;
 }
 
 //----------- NAVIGATE Q & A --------------------//
 
 function displayAnswer() {
-  const answerContainer = document.getElementById("answer-container");
-  document.getElementById("p-tag").style.display = "grid";
+  const answerContainer = document.getElementById("flashcard-container");
+  document.getElementById("p-tag").style.display = "flex";
   document.getElementById("h2-tag").style.display = "none";
   const currentQuestion = selectedCategoryQuestions[currentQuestionIndex];
   answerContainer.innerHTML = `<p">${currentQuestion.answer}</>`;
+  document.getElementById("turtee-explain").style.display = "flex";
 }
 
 function previousQuestion() {
@@ -108,19 +117,18 @@ function updateNavigationButtons() {
 }
 
 //-------------- TYPING FEATURE -----------------//
-function typeText(index) {
-  console.log("we are here.");
-  if (index < textToType.length) {
-    typingDiv.innerHTML += textToType.charAt(index);
-    index++;
-    setTimeout(function () {
-      typeText(index);
-    }, typingSpeed);
+function answerWriter() {
+  if (i < txt.length) {
+    document.getElementById("flashcard-container").innerHTML += txt.charAt(i);
+    i++;
+    setTimeout(answerWriter, speed);
   }
 }
 
 function resetGame() {
-  console.log(availableQuestions);
+  document.getElementById("logo-svg").style.display = "none";
+  document.getElementById("copy-right").style.display = "none";
+  document.getElementById("speech-bubble").style.display = "flex";
   if (availableQuestions === undefined) {
     document.getElementById("reset").style.cursor = "not-allowed";
   } else {
@@ -132,7 +140,7 @@ function resetGame() {
     document.getElementById("js").style.display = "flex";
     document.getElementById("html5").style.display = "flex";
     document.getElementById("turtee-8").style.display = "flex";
-    document.getElementById("explain-turtee").style.display = "flex";
+    document.getElementById("turtee-explain").style.display = "none";
     document.getElementById("flashcard-container").style.display = "none";
     document.getElementById("navigation").style.display = "none";
     document.getElementById("dragonHackerButton").style.display = "none";
@@ -144,6 +152,10 @@ function hideButton(clickedButtonId) {
   document.getElementById("welcome").style.display = "none";
   document.getElementById("pre-footer-id").style.visibility = "hidden";
   document.getElementById("dragonHackerButton").style.display = "none";
+  document.getElementById("turtee-8").style.display = "none";
+  document.getElementById("speech-bubble").style.display = "none";
+  document.getElementById("logo-svg").style.display = "none";
+  document.getElementById("copy-right").style.display = "none";
 
   if (clickedButtonId === "html") {
     document.getElementById("css").style.display = "none";

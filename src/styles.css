@@ -1,3 +1,4 @@
+/*      SPEECH BUBBLE       */
 .speech-bubble {
   filter: drop-shadow(-1px -1px 2px rgba(0, 0, 0, 0.1))
     drop-shadow(1px 2px 2px rgba(0, 0, 0, 0.15));
@@ -8,17 +9,19 @@
   font-family: "Source Sans Pro", sans-serif;
   font-size: 1.2rem;
   font-weight: 400;
-  background: #8ca8d8;
+  background: #1562e617;
   color: white;
   display: flex;
   width: 50%;
   display: none;
   border-radius: 2rem;
   min-width: 430px;
+  max-width: 470px;
 }
 .speech-bubble::before {
   border: 12.5px solid transparent;
-  border-top: 12.5px solid #8ca8d8;
+  border-top: 12.5px solid hsla(218, 49%, 70%, 0.121);
+
   border-bottom: 0;
   height: 0;
   width: 0;
@@ -36,49 +39,88 @@
   position: absolute;
   bottom: -2rem;
   left: 4.5rem;
-  font-size: 1rem;
+  font-size: 1.5rem;
   font-style: normal;
   font-weight: 300;
   letter-spacing: 0.5px;
   color: rgb(165, 13, 13);
 }
+
+/*         FONTS         */
 .madimi-one-regular {
   font-family: "Madimi One", sans-serif;
   font-weight: 600;
   font-style: normal;
+  padding: 1rem;
 }
-
+/*        HTML             */
 html {
   height: 100vh;
 
-  background-color: #e5e5f7;
-  opacity: 0.8;
-  background-image: repeating-radial-gradient(
-      circle at 0 0,
-      transparent 0,
-      #e5e5f7 10px
-    ),
-    repeating-linear-gradient(#444cf755, #f757b7);
+  background-color: #f8fcf9;
 
   border: none;
   border-style: none;
   min-width: 492px;
   max-width: auto;
+  overflow: none;
 }
+
+/*            BODY           */
 body {
   font-family: "Arial", sans-serif;
   display: flex;
   flex-direction: column;
+  justify-content: space-evenly;
   gap: 1.5rem;
   height: auto;
   width: 97%;
 }
+/*       MEDIA QUERIES       */
 
-p.instruct-init {
-  background-color: white;
-  border-radius: 2rem 0;
+/* On screens that are 992px or less, set the background color to blue */
+@media screen and (max-width: 992px) {
+  body {
+    background-color: blue;
+    display: flex;
+    justify-content: space-evenly;
+  }
 }
 
+/* On screens that are 600px or less, set the background color to olive */
+@media screen and (max-width: 600px) {
+  body {
+    background-color: olive;
+    display: flex;
+    justify-content: space-evenly;
+    min-width: none;
+  }
+}
+
+/* The navbar container */
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+/* Navbar links */
+.topnav a {
+  float: left;
+  display: block;
+
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* On screens that are 600px wide or less, make the menu links stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .topnav a {
+    float: none;
+    width: 100%;
+  }
+}
+
+/*         KEYFRANE          */
 @keyframes fallAndBounce {
   0% {
     transform: translateY(-100%);
@@ -126,11 +168,16 @@ header {
   font-weight: bold;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   font-size: 3rem;
-  background: -webkit-linear-gradient(#ee0b0b, #4ca425);
+  background: -webkit-linear-gradient(#ee0b0b, #e5c703);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 
   animation: fallAndBounce 10s alternate-reverse;
+}
+
+p.instruct-init {
+  background-color: white;
+  border-radius: 2rem 0;
 }
 .start-button {
   display: flex;
@@ -143,6 +190,14 @@ header {
   min-width: 360px;
   font-size: xx-large;
   color: rgb(165, 13, 13);
+}
+
+section#category-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  max-width: 1000px;
+  padding: 1rem;
 }
 #dragonHackerImage {
   display: flex;
@@ -166,6 +221,7 @@ header {
   cursor: pointer;
   padding: 0.75rem;
 }
+
 #category-selection {
   width: 100%;
 }
@@ -178,6 +234,24 @@ header {
 .flex-center-data {
   display: flex;
   flex-direction: row;
+  justify-content: flex-end;
+
+  margin-left: 5rem;
+}
+#turtee-8 {
+  display: none;
+}
+#turtee-explain {
+  display: none;
+}
+.container-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.pre-footer {
+  display: none;
 }
 
 #flashcard-container {
@@ -188,12 +262,43 @@ header {
   align-items: center;
   height: auto;
   top: 7rem;
-  min-width: 80%;
+  min-width: 65%;
+  max-width: 75%;
   background-color: rgb(250 250 250 /50%);
   border: 2% solid #cccccc;
   box-shadow: 0.5rem 1rem 2rem 0.5rem rgba(0, 0, 0, 0.75);
   border-radius: 1rem;
   padding: 0.5rem 0.5rem 0.25rem 0.25rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+button#answer-button {
+  display: flex;
+  justify-content: center;
+  padding: 0.2rem 0;
+  background-color: rgb(24, 162, 225);
+  border-radius: 1rem;
+  border-style: none;
+  font-weight: bold;
+  width: 8rem;
+  margin: 0.3em;
+  z-index: 1;
+  cursor: pointer;
+}
+
+button#answer-button:hover {
+  display: flex;
+  justify-content: center;
+  padding: 0.2rem 0;
+  background-color: #8b0000;
+  border-radius: 1rem;
+  border-style: none;
+  font-weight: bold;
+  width: 8rem;
+  margin: 0.3em;
+  z-index: 1;
+  cursor: pointer;
 }
 
 svg#html5 {
@@ -202,6 +307,9 @@ svg#html5 {
   width: 5rem;
   height: 5rem;
   border: solid;
+}
+#html5:hover {
+  background-color: rgb(12, 228, 236);
 }
 
 svg#css {
@@ -212,6 +320,9 @@ svg#css {
   border: solid;
   border-radius: 12% 10% 15% 5%;
 }
+#css:hover {
+  background-color: rgb(12, 228, 236);
+}
 
 svg#js {
   background-color: rgb(77, 255, 0);
@@ -220,6 +331,9 @@ svg#js {
   height: 5rem;
   border: solid;
   border-radius: 12% 10% 15% 5%;
+}
+#js:hover {
+  background-color: rgb(12, 228, 236);
 }
 
 #h2-tag {
@@ -284,10 +398,11 @@ svg#logo-svg {
   align-items: center;
   flex-direction: row;
   margin: 0;
-  max-width: 10rem;
-  max-height: 10rem;
-  background-color: rgba(14, 2, 2, 0.25);
+  max-width: 5rem;
+  max-height: 5rem;
+  background-color: none;
   border-radius: 10%;
+  visibility: hidden;
 }
 #welcome {
   z-index: 0;
@@ -302,14 +417,6 @@ svg#logo-svg {
 
   width: 80%;
 }
-.button2 {
-  background-color: #8bfe08;
-
-  border-radius: 2rem;
-
-  padding: 0.5rem;
-  cursor: pointer;
-} /* Blue */
 
 .button3 {
   display: flex;
@@ -321,12 +428,37 @@ svg#logo-svg {
   min-width: 2.5rem;
 }
 
+.pushable {
+  background: hsl(340, 82%, 53%);
+  border-radius: 12px;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  outline-offset: 4px;
+}
+.pushable:hover .front {
+  background-color: #1dafe4;
+}
+.front {
+  display: block;
+  padding: 12px 42px;
+  border-radius: 12px;
+  font-size: 1.25rem;
+  background: #8b0000;
+  /* background: hsl(345deg 100% 47%); */
+  color: white;
+  transform: translateY(-6px);
+}
+
+.pushable:active .front {
+  transform: translateY(-2px);
+}
+
 button#reset {
   display: flex;
   justify-content: center;
   padding: 0.2rem 0;
-  color: darkred;
-  background-color: aquamarine;
+
   border-radius: 1rem;
   border-style: none;
   font-weight: bold;
@@ -335,32 +467,44 @@ button#reset {
   z-index: 1;
   cursor: pointer;
 }
-button#reset::after {
-  display: flex;
-  justify-content: center;
-  padding: 0.2rem 0;
-  background-color: #0e0202;
+#reset:hover #front {
+  background-color: #fa04040c;
 }
 
-.copyright {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-
-  align-items: flex-end;
+#reset {
+  background: hsl(340deg 100% 32%);
+  border-radius: 12px;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  outline-offset: 4px;
 }
+#front {
+  display: block;
+  padding: 12px 42px;
+  border-radius: 12px;
+  font-size: 1.25rem;
+  background: hsl(345deg 100% 47%);
+  color: white;
+  transform: translateY(-6px);
+}
+
+#reset:active #front {
+  transform: translateY(-2px);
+}
+
 footer {
   display: flex;
 
   flex-direction: row;
-  align-items: center;
+  align-items: flex-end;
   justify-content: space-between;
   font-style: italic;
   font-weight: lighter;
 
-  width: 100%;
+  width: 98%;
   max-height: auto;
-  min-width: auto;
+  min-width: 96%;
   position: fixed;
   bottom: 0;
 
@@ -374,11 +518,12 @@ div.copy-right {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
+  padding-right: 2rem;
 }
 .container-content {
   display: flex;
   flex-direction: row-reverse;
-  padding: -2rem;
+  padding: 2rem;
 }
 p {
   display: flex;
@@ -400,10 +545,3 @@ p {
   z-index: -1;
   position: absolute;
 }
-
-/* .footer-wrapper {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-} */

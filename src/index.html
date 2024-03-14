@@ -33,7 +33,7 @@
     />
     <link rel="manifest" href="./img/favicon_io/site.webmanifest" />
     <script type="text/javascript" src="index.js"></script>
-    <title>WEBDEV STUDYMATE v 0.1</title>
+    <title>WEBDEV STUDYMATE v 1.1</title>
   </head>
 <div id="welcome">
      
@@ -44,44 +44,38 @@
   </header>
        
   </div>
-  <!-- <div id="welcome">
-    
-     
-     
-         
-    </div> -->
-  
     
     
     <div id="start-button" class="start-button">
      <button  id="dragonHackerButton" onclick="showStartMenu()">
-    <img id="dragonHackerImage" src="./img/dragonHackerC.png.jpg" alt="click-here-to-begin" /> </button><p class="instruct-init madimi-one-regular">Press image to continue...</p></div>
+    <img id="dragonHackerImage" src="./img/dragonHackerC.png.jpg" alt="click-here-to-begin" /> </button><div class="instruct-init madimi-one-regular">Press image to continue...</div></div>
     
     
-    <section id="category-button" style="display: none;">
+    <section id="category-button" 
+    class="topnav"
+    style="display: none;">
       <svg
         type="button"
         id="html5"
+        class="html5"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 384 512"
         onclick="startGame('html')"
         data-category="html"
       >
-        <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
         <path
           d="M0 32l34.9 395.8L191.5 480l157.6-52.2L384 32H0zm308.2 127.9H124.4l4.1 49.4h175.6l-13.6 148.4-97.9 27v.3h-1.1l-98.7-27.3-6-75.8h47.7L138 320l53.5 14.5 53.7-14.5 6-62.2H84.3L71.5 112.2h241.1l-4.4 47.7z"
         />
       </svg>
 
       <svg
-        class=""
+        class="css"
         id="css"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 384 512"
         onclick="startGame('css')"
         data-category="css"
       >
-        <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
         <path
           d="M0 32l34.9 395.8L192 480l157.1-52.2L384 32H0zm313.1 80l-4.8 47.3L193 208.6l-.3 .1h111.5l-12.8 146.6-98.2 28.7-98.8-29.2-6.4-73.9h48.9l3.2 38.3 52.6 13.3 54.7-15.4 3.7-61.6-166.3-.5v-.1l-.2 .1-3.6-46.3L193.1 162l6.5-2.7H76.7L70.9 112h242.2z"
         />
@@ -89,39 +83,28 @@
 
       <svg
         id="js"
+        class="js"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 448 512"
         type="button"
         onclick="startGame('javascript')"
         data-category="javascript"
       >
-        <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+        
         <path
           d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM243.8 381.4c0 43.6-25.6 63.5-62.9 63.5-33.7 0-53.2-17.4-63.2-38.5l34.3-20.7c6.6 11.7 12.6 21.6 27.1 21.6 13.8 0 22.6-5.4 22.6-26.5V237.7h42.1v143.7zm99.6 63.5c-39.1 0-64.4-18.6-76.7-43l34.3-19.8c9 14.7 20.8 25.6 41.5 25.6 17.4 0 28.6-8.7 28.6-20.8 0-14.4-11.4-19.5-30.7-28l-10.5-4.5c-30.4-12.9-50.5-29.2-50.5-63.5 0-31.6 24.1-55.6 61.6-55.6 26.8 0 46 9.3 59.8 33.7L368 290c-7.2-12.9-15-18-27.1-18-12.3 0-20.1 7.8-20.1 18 0 12.6 7.8 17.7 25.9 25.6l10.5 4.5c35.8 15.3 55.9 31 55.9 66.2 0 37.8-29.8 58.6-69.7 58.6z"
         />
       </svg>
     </section>
     
-    
-    
-    
-    
-
-   
+      
     <div id="flashcard-container" >
      
-      <!-- Questions or answers will be displayed here -->
-      <div id="typing-text" class="flashcard">
-        
-      </div>
-      
+    
     </div>
     
 
-
-
-
-    <div id="navigation" class="navigation">
+  <div id="navigation" class="navigation">
       <svg
         type="button"
         class="button3"
@@ -131,7 +114,7 @@
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 512 512"
       >
-        <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+        
         <path
           d="M48 256a208 208 0 1 1 416 0A208 208 0 1 1 48 256zm464 0A256 256 0 1 0 0 256a256 256 0 1 0 512 0zM217.4 376.9c4.2 4.5 10.1 7.1 16.3 7.1c12.3 0 22.3-10 22.3-22.3V304h96c17.7 0 32-14.3 32-32V240c0-17.7-14.3-32-32-32H256V150.3c0-12.3-10-22.3-22.3-22.3c-6.2 0-12.1 2.6-16.3 7.1L117.5 242.2c-3.5 3.8-5.5 8.7-5.5 13.8s2 10.1 5.5 13.8l99.9 107.1z"
         />
@@ -146,81 +129,43 @@
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 512 512"
       >
-        <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+        
         <path
           d="M464 256A208 208 0 1 1 48 256a208 208 0 1 1 416 0zM0 256a256 256 0 1 0 512 0A256 256 0 1 0 0 256zM294.6 135.1c-4.2-4.5-10.1-7.1-16.3-7.1C266 128 256 138 256 150.3V208H160c-17.7 0-32 14.3-32 32v32c0 17.7 14.3 32 32 32h96v57.7c0 12.3 10 22.3 22.3 22.3c6.2 0 12.1-2.6 16.3-7.1l99.9-107.1c3.5-3.8 5.5-8.7 5.5-13.8s-2-10.1-5.5-13.8L294.6 135.1z"
         />
       </svg>
-      <button class="button2" id="answer-button" onclick="displayAnswer()">
-        SHOW
-      </button>
+
+      <button class="pushable" id="answer-button" onclick="displayAnswer()">
+        <span class="front">SHOW</span>      </button>
+
     </div>
 
     <div>
 
-<!-- </div><img  class="speech" src="./img/4x/vecteezy_speech-bubble-.png" alt="text bubble" wdith="35px" height="50px"/>
-
-      <div><p class="direction madimi-one-regular " id="cat-select" style="display: none;">
-    <span class="choose"></span ></span> 
-    
-  </p></div> -->
 <div class="flex-center-data">   
   <div id="speech-bubble" class="speech-bubble">
   <p id="cat-select"></p>
   <cite> Turtee de Turtle</cite>
 </div>   
 
-<div class="container-content" style="display: flex;">
-  <div><svg id="turtee-8"  style="display: none;"><image xlink:href="./img/SVG/Asset_8_walking.svg" /></svg></div>
+<div class="container-content" >
+  <div><svg id="turtee-8"><image xlink:href="./img/SVG/Asset_10_facing.svg" /></svg></div>
   
   
  
-    <div id="explain-turtee"  >
-      <svg class="turtee-global" style="display:none;"><image id="facing-turtee-img" xlink:href="./img/SVG/Asset_10_facing.svg" />
+    <div id="turtee-explain"  >
+      <svg class="turtee-global" ><image id="facing-turtee-img" xlink:href="./img/SVG/Asset_8_walking.svg" />
       
       </svg>
       </div>
     </div>
+
+ <div id="pre-footer-id" class="pre-footer">
+      
+ </div>
+
+ </div></div></div>
   
-    
-
-
-<!-- <svg class="turtee-global" ><image id="facing-turtee-img" xlink:href="./img/SVG/Asset_9_turning.svg" /></svg>
-
-  </div>  
-  
- <div><svg class="turtee-global" ><image id="turtee-asset-2" xlink:href="./img/SVG/Asset_3_follow.svg" /></svg>
-
-<svg class="turtee-global" ><image id="turtee-asset-2" xlink:href="./img/SVG/Asset_5_sit.svg" /></svg>
-
-
-<svg class="turtee-global" ><image id="turtee-asset-2" xlink:href="./img/SVG/Asset_6_fell.svg" /></svg> -->
-
- 
-
-      <!-- <svg class="turtee-global" ><image id="facing-turtee-img" xlink:href="./img/SVG/Asset_7_handup.svg" />
-      
-      </svg>
-        
-      </div> -->
-<!-- </div> -->
-
- <div id="pre-footer-id" class="pre-footer" style="display:none;">
-      <svg
-        id="welcome-turtee"
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 448 512"
-        type="svg"
-        value="welcome-turtee"
-        onclick="introduceGame()"
-      >
-        <!-- Use the 'image' element to embed an external SVG file -->
-        <image id="welcome-turtee-img" xlink:href="./img/SVG/Asset_1.svg" />
-      </svg>
-      
-      
-    </div>
-    </div>
    <footer>
     <svg id="logo-svg" >
     <image class="logo-svg" xlink:href="./img/SVG/Asset_25_logo.svg" width="2rem" height="2rem"/>
@@ -228,10 +173,10 @@
  
    
       <div><button id="reset" type="button" value="reset" onclick="resetGame()">
-          RESET
+          <span id="front">RESET</span>
       </button></div>
       
-           <div class="copy-right">
+           <div id ="copy-right">
         
         <div class="copy-right ">
           <a href="https://www.maaltech.pro ">MaalTech.pro </a> <span id="copyright-year"> &#169 <script>document.write(new Date().getFullYear())</script></span>
@@ -245,101 +190,3 @@
 </html>
 
 
-<!-- Animaejs Tester
-
-  <script
-      type="text/javascript"
-      src="../node_modules/animejs/lib/anime.min.js"
-    ></script>
-
-
-     <div class="gen-text" ><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="256" height="256" viewBox="0 0 256 256" xml:space="preserve">0
-
-<defs>
-</defs>
-<g style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: none; fill-rule: nonzero; opacity: 1;" transform="translate(217.94863813229574 217.9486381322957) rotate(180) scale(2.23 2.23) matrix(1 0 0 -1 0 90)" >
-	<path d="M 14.972 86.134 c -0.193 0 -0.388 -0.038 -0.574 -0.116 c -0.551 -0.231 -0.909 -0.77 -0.909 -1.368 V 67.853 H 5.177 C 2.322 67.853 0 65.531 0 62.676 V 9.043 c 0 -2.854 2.322 -5.177 5.177 -5.177 h 79.646 C 87.678 3.866 90 6.189 90 9.043 v 53.633 c 0 2.855 -2.322 5.177 -5.177 5.177 H 34.206 L 16.011 85.709 C 15.728 85.987 15.353 86.134 14.972 86.134 z M 5.177 6.833 c -1.218 0 -2.21 0.991 -2.21 2.21 v 53.633 c 0 1.219 0.991 2.21 2.21 2.21 h 9.795 c 0.82 0 1.484 0.664 1.484 1.484 v 14.746 L 32.56 65.311 c 0.278 -0.272 0.65 -0.425 1.039 -0.425 h 51.224 c 1.219 0 2.21 -0.991 2.21 -2.21 V 9.043 c 0 -1.218 -0.991 -2.21 -2.21 -2.21 H 5.177 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(3,102,93); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
-</g>
-</svg></div>
-
-<div class="main-logo">
-    <div class="logo-animation-wrapper">
-      <div class="logo-animation">
-        <div class="anime-logo">
-          <div class="anime-logo-signs">
-            <div class="logo-letter letter-a">
-              <svg
-                class="bounced"
-                viewBox="0 0 200 240"
-                width="200"
-                height="240"
-              >
-                <path
-                  class="line"
-                  d="M30 20h130c9.996 0 10 40 10 60v140H41c-11.004 0-11-40-11-60s-.004-60 10-60h110"
-                />
-              </svg>
-            </div>
-            <div class="logo-letter letter-n">
-              <svg
-                class="bounced"
-                viewBox="0 0 200 240"
-                width="200"
-                height="240"
-              >
-                <path
-                  class="line"
-                  d="M170 220V60c0-31.046-8.656-40-19.333-40H49.333C38.656 20 30 28.954 30 60v160"
-                />
-              </svg>
-            </div>
-            <div class="logo-letter letter-i">
-              <svg class="bounced" viewBox="0 0 60 240" width="60" height="240">
-                <path class="line" d="M30 20v200" data-d2="M30 100v120" />
-              </svg>
-            </div>
-            <div class="logo-letter letter-m">
-              <svg
-                class="bounced"
-                viewBox="0 0 340 240"
-                width="340"
-                height="240"
-                fill="none"
-                fill-rule="evenodd"
-              >
-                <path
-                  class="line"
-                  d="M240,220 L240,60 C240,28.954305 231.344172,20 220.666667,20 C171.555556,20 254.832031,20 170,20 C85.1679688,20 168.444444,20 119.333333,20 C108.655828,20 100,28.954305 100,60 L100,220"
-                  data-d2="M310,220 L310,60 C310,28.954305 301.344172,20 290.666667,20 C241.555556,20 254.832031,110 170,110 C85.1679688,110 98.4444444,20 49.3333333,20 C38.6558282,20 30,28.954305 30,60 L30,220"
-                  data-d3="M310,220 L310,60 C310,28.954305 301.344172,20 290.666667,20 C241.555556,20 254.832031,20 170,20 C85.1679688,20 98.4444444,20 49.3333333,20 C38.6558282,20 30,28.954305 30,60 L30,220"
-                />
-              </svg>
-            </div>
-            <div class="logo-letter letter-e">
-              <svg
-                class="bounced"
-                viewBox="0 0 200 240"
-                width="200"
-                height="240"
-              >
-                <path
-                  class="line"
-                  d="M50 140h110c10 0 10-40 10-60s0-60-10-60H40c-10 0-10 40-10 60v80c0 20 0 60 10 60h130"
-                />
-              </svg>
-            </div>
-            <div class="bounce">
-              <svg viewBox="0 0 1000 260" width="1000" height="260" fill="none">
-                <path
-                  d="M630,240 C630,111.154418 608.971354,40 530.160048,40 C451.348741,40 430,127.460266 430,210"
-                />
-              </svg>
-              <div class="dot"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
--->
