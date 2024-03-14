@@ -16,7 +16,8 @@
   display: none;
   border-radius: 2rem;
   min-width: 430px;
-  max-width: 470px;
+  max-width: 450px;
+  max-height: 200px;
 }
 .speech-bubble::before {
   border: 12.5px solid transparent;
@@ -62,8 +63,9 @@ html {
   border: none;
   border-style: none;
   min-width: 492px;
-  max-width: auto;
+  max-width: 100%;
   overflow: none;
+  z-index: -1;
 }
 
 /*            BODY           */
@@ -71,19 +73,25 @@ body {
   font-family: "Arial", sans-serif;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: space-between;
   gap: 1.5rem;
   height: auto;
-  width: 97%;
+  max-width: auto;
+  z-index: 1;
 }
 /*       MEDIA QUERIES       */
 
 /* On screens that are 992px or less, set the background color to blue */
 @media screen and (max-width: 992px) {
   body {
-    background-color: blue;
+    background-color: none;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    width: auto;
+    max-height: 450px;
+    border-radius: 1rem;
+    padding-top: 0.5rem;
+    z-index: 2;
   }
 }
 
@@ -92,31 +100,20 @@ body {
   body {
     background-color: olive;
     display: flex;
-    justify-content: space-evenly;
-    min-width: none;
+    justify-content: space-around;
+    min-width: 400px;
   }
-}
-
-/* The navbar container */
-.topnav {
-  overflow: hidden;
-  background-color: #333;
-}
-
-/* Navbar links */
-.topnav a {
-  float: left;
-  display: block;
-
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
-/* On screens that are 600px wide or less, make the menu links stack on top of each other instead of next to each other */
-@media screen and (max-width: 600px) {
-  .topnav a {
-    float: none;
-    width: 100%;
+  .turtee-8-contain {
+    display: none;
+    z-index: -1;
+  }
+  #turtee-8 {
+    display: none;
+    grid-row: 3;
+    grid-column: 1;
+  }
+  #turtee-explain {
+    display: none;
   }
 }
 
@@ -175,10 +172,16 @@ header {
   animation: fallAndBounce 10s alternate-reverse;
 }
 
-p.instruct-init {
+div.instruct-init {
   background-color: white;
   border-radius: 2rem 0;
 }
+/* .init-span {
+  background: -webkit-linear-gradient(#150101, #e57403);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+} */
+
 .start-button {
   display: flex;
   flex-direction: column;
@@ -196,7 +199,8 @@ section#category-button {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  max-width: 1000px;
+  min-width: 120px;
+
   padding: 1rem;
 }
 #dragonHackerImage {
@@ -212,7 +216,7 @@ section#category-button {
   display: flex;
   flex-direction: row;
   align-items: center;
-  width: 100%;
+  width: 80%;
   justify-content: center;
   background-color: red;
   border: solid black;
@@ -223,13 +227,14 @@ section#category-button {
 }
 
 #category-selection {
-  width: 100%;
+  display: block;
+  width: 80%;
 }
-#category-button {
+/* #category-button {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-}
+} */
 
 .flex-center-data {
   display: flex;
@@ -237,40 +242,57 @@ section#category-button {
   justify-content: flex-end;
 
   margin-left: 5rem;
+  overflow-y: hidden;
+}
+.turtee-8-contain {
+  display: flex;
 }
 #turtee-8 {
   display: none;
 }
 #turtee-explain {
-  display: none;
-}
-.container-content {
   display: flex;
+  /* grid-template-columns: repeat(2, 1.5fr);
+  grid-template-rows: repeat(2, 1fr); */
   flex-direction: row;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-end;
+  justify-content: flex-end;
+  margin-right: -1rem;
+  margin-top: -10rem;
+  /* margin-bottom: 2rem; */
 }
-.pre-footer {
+
+.container-content {
   display: none;
+  /* flex-direction: column-reverse;
+  align-items: flex-end;
+  justify-content: flex-end; */
+
+  grid-template-columns: repeat(4, 1.5fr);
+  grid-template-rows: repeat(3, 1fr);
+}
+#pre-footer-id {
+  display: grid;
 }
 
 #flashcard-container {
   display: none;
-  z-index: -1;
+  z-index: 1;
   text-align: center;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   height: auto;
-  top: 7rem;
+  top: auto;
   min-width: 65%;
-  max-width: 75%;
-  background-color: rgb(250 250 250 /50%);
-  border: 2% solid #cccccc;
-  box-shadow: 0.5rem 1rem 2rem 0.5rem rgba(0, 0, 0, 0.75);
+  width: 88%;
+  background-color: rgba(243, 14, 14, 0.99);
+
+  box-shadow: 0.5rem 1rem 2rem 0.5rem rgba(0, 0, 0, 0.99);
   border-radius: 1rem;
   padding: 0.5rem 0.5rem 0.25rem 0.25rem;
   margin-left: auto;
   margin-right: auto;
+  color: #edf5ea;
 }
 
 button#answer-button {
@@ -351,12 +373,15 @@ svg#js {
 
 #navigation {
   display: none;
-  justify-content: space-around;
-  align-content: space-evenly;
-  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+
+  align-items: flex-start;
   inline-size: none;
   background-color: none;
-  width: 95%;
+  max-width: 80%;
+  padding-top: 1.5rem;
+  margin-left: 5rem;
 }
 #html5 {
   width: 1.5rem;
@@ -506,13 +531,15 @@ footer {
   max-height: auto;
   min-width: 96%;
   position: fixed;
-  bottom: 0;
+  bottom: 1px;
 
   background-color: none;
   color: #0e0202;
 
-  padding: 0.25rem;
+  padding: 0.5rem;
   min-width: 250px;
+  /* margin-left: 5rem; */
+  overflow: hidden;
 }
 div.copy-right {
   display: flex;
@@ -522,7 +549,7 @@ div.copy-right {
 }
 .container-content {
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: row;
   padding: 2rem;
 }
 p {

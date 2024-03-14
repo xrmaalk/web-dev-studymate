@@ -5,10 +5,14 @@ let availableQuestions;
 const typingSpeed = 50; //typing ( milliseconds)
 
 let questions;
-let i = 0;
-let txt = "Select a category to begin lesson.";
-
 let speed = 50;
+let speechOn = true;
+let i = 0;
+let txt =
+  ("Welcome.....",
+  "I'm Turtee...",
+  "your study buddy!",
+  "Choose a category to begin....");
 
 //----------------- INPUT DATA -----------------//
 
@@ -75,6 +79,7 @@ function displayAnswer() {
   const currentQuestion = selectedCategoryQuestions[currentQuestionIndex];
   answerContainer.innerHTML = `<p">${currentQuestion.answer}</>`;
   document.getElementById("turtee-explain").style.display = "flex";
+  document.getElementById("pre-footer-id").style.display = "grid";
 }
 
 function previousQuestion() {
@@ -125,6 +130,22 @@ function answerWriter() {
   }
 }
 
+// while (speechOn) {
+//   if (txt == "Welcome...") {
+//     txt = "I am Turtee dE Turtle.";
+//     typeWriter();
+//     speechOn = true;
+//   } else if (txt == "I am Turtee de Turtle") {
+//     txt = "I'll be your Study Mate.";
+//     typeWriter();
+//     speechOn = true;
+//   } else {
+//     txt = "Select a Category to begin";
+//     typeWriter();
+//     speechOn = false;
+//   }
+// }
+
 function resetGame() {
   document.getElementById("logo-svg").style.display = "none";
   document.getElementById("copy-right").style.display = "none";
@@ -139,7 +160,7 @@ function resetGame() {
     document.getElementById("css").style.display = "flex";
     document.getElementById("js").style.display = "flex";
     document.getElementById("html5").style.display = "flex";
-    document.getElementById("turtee-8").style.display = "flex";
+    document.getElementById("turtee-8").style.display = "grid";
     document.getElementById("turtee-explain").style.display = "none";
     document.getElementById("flashcard-container").style.display = "none";
     document.getElementById("navigation").style.display = "none";
