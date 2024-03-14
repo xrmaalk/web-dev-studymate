@@ -43,6 +43,7 @@ async function startGame(category) {
     document.getElementById("flashcard-container").style.display =
       "inline-flex";
     document.getElementById("navigation").style.display = "flex";
+    // document.getElementById("content-container").style.display = "none";
 
     if (selectedCategoryQuestions.length > 0) {
       updateQuestionDisplay();
@@ -61,12 +62,17 @@ async function startGame(category) {
 function updateQuestionDisplay() {
   const currentQuestion = selectedCategoryQuestions[currentQuestionIndex];
 
-  currentQuestion.answer;
+  // currentQuestion.answer;
 
   const questionContainer = document.getElementById("flashcard-container");
   questionContainer.innerHTML = `
     <h2 id="h2-tag">${currentQuestion.question}</h2>
     <div id="p-tag">${currentQuestion.answer}</div>
+    <div id="turtee-explain"  >
+      <svg class="turtee-global" >
+        <image id="facing-turtee-img" xlink:href="./img/SVG/Asset_8_walking.svg" />
+      </svg>
+    </div>
   `;
 }
 
@@ -79,10 +85,11 @@ function displayAnswer() {
   const currentQuestion = selectedCategoryQuestions[currentQuestionIndex];
   answerContainer.innerHTML = `<p">${currentQuestion.answer}</>`;
   document.getElementById("turtee-explain").style.display = "flex";
-  document.getElementById("pre-footer-id").style.display = "grid";
+  document.getElementById("pre-footer-id").style.display = "flex";
 }
 
 function previousQuestion() {
+  document.getElementById("turtee-explain").style.display = "none";
   if (currentQuestionIndex > 0) {
     currentQuestionIndex--;
     updateQuestionDisplay();
@@ -166,12 +173,13 @@ function resetGame() {
     document.getElementById("navigation").style.display = "none";
     document.getElementById("dragonHackerButton").style.display = "none";
     document.getSelection("speech-bubble").style.display = "flex";
+    document.getSelection("content-container").style.display = "flex";
   }
 }
 
 function hideButton(clickedButtonId) {
   document.getElementById("welcome").style.display = "none";
-  document.getElementById("pre-footer-id").style.visibility = "hidden";
+  document.getElementById("pre-footer-id").style.display = "none";
   document.getElementById("dragonHackerButton").style.display = "none";
   document.getElementById("turtee-8").style.display = "none";
   document.getElementById("speech-bubble").style.display = "none";

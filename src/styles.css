@@ -254,25 +254,29 @@ section#category-button {
   display: flex;
   /* grid-template-columns: repeat(2, 1.5fr);
   grid-template-rows: repeat(2, 1fr); */
-  flex-direction: row;
-  align-items: flex-end;
-  justify-content: flex-end;
-  margin-right: -1rem;
-  margin-top: -10rem;
+
   /* margin-bottom: 2rem; */
+
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+
+  margin-top: -5rem;
+  margin-bottom: 0;
 }
 
-.container-content {
+/* .container-content {
   display: none;
-  /* flex-direction: column-reverse;
-  align-items: flex-end;
-  justify-content: flex-end; */
-
+  
   grid-template-columns: repeat(4, 1.5fr);
   grid-template-rows: repeat(3, 1fr);
+} */
+s .turtee-global {
+  grid-row-start: auto;
+  grid-column-end: auto;
 }
 #pre-footer-id {
-  display: grid;
+  display: none;
 }
 
 #flashcard-container {
@@ -284,9 +288,9 @@ section#category-button {
   height: auto;
   top: auto;
   min-width: 65%;
-  width: 88%;
+  width: 85%;
   background-color: rgba(243, 14, 14, 0.99);
-
+  position: relative;
   box-shadow: 0.5rem 1rem 2rem 0.5rem rgba(0, 0, 0, 0.99);
   border-radius: 1rem;
   padding: 0.5rem 0.5rem 0.25rem 0.25rem;
@@ -376,12 +380,13 @@ svg#js {
   justify-content: space-between;
   flex-direction: row;
 
-  align-items: flex-start;
+  align-items: flex-end;
   inline-size: none;
   background-color: none;
-  max-width: 80%;
-  padding-top: 1.5rem;
-  margin-left: 5rem;
+  max-width: 90%;
+  padding-top: 0.5rem;
+  margin-right: 8rem;
+  margin-left: 2.5rem;
 }
 #html5 {
   width: 1.5rem;
@@ -535,8 +540,9 @@ footer {
 
   background-color: none;
   color: #0e0202;
-
-  padding: 0.5rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  padding: 0.9rem 1rem 0.9rem 0;
   min-width: 250px;
   /* margin-left: 5rem; */
   overflow: hidden;
@@ -550,7 +556,7 @@ div.copy-right {
 .container-content {
   display: flex;
   flex-direction: row;
-  padding: 2rem;
+  padding: 1rem;
 }
 p {
   display: flex;
