@@ -98,7 +98,7 @@ body {
 /* On screens that are 600px or less, set the background color to olive */
 @media screen and (max-width: 600px) {
   body {
-    background-color: olive;
+    background-color: none;
     display: flex;
     justify-content: space-around;
     min-width: 400px;
@@ -302,13 +302,14 @@ s .turtee-global {
 button#answer-button {
   display: flex;
   justify-content: center;
-  padding: 0.2rem 0;
+  padding: 0.25rem 2rem;
   background-color: rgb(24, 162, 225);
   border-radius: 1rem;
   border-style: none;
   font-weight: bold;
   width: 8rem;
-  margin: 0.3em;
+  margin: 0.1rem 0 0.25rem 1rem;
+
   z-index: 1;
   cursor: pointer;
 }
@@ -540,9 +541,9 @@ footer {
 
   background-color: none;
   color: #0e0202;
-  margin-left: 2rem;
+  margin-left: 0.1rem;
   margin-right: 2rem;
-  padding: 0.9rem 1rem 0.9rem 0;
+  padding: 0.9rem 1rem 0.9rem 0.9;
   min-width: 250px;
   /* margin-left: 5rem; */
   overflow: hidden;

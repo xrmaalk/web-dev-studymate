@@ -86,6 +86,7 @@ function displayAnswer() {
   answerContainer.innerHTML = `<p">${currentQuestion.answer}</>`;
   document.getElementById("turtee-explain").style.display = "flex";
   document.getElementById("pre-footer-id").style.display = "flex";
+  playSoundEffect();
 }
 
 function previousQuestion() {
@@ -129,13 +130,13 @@ function updateNavigationButtons() {
 }
 
 //-------------- TYPING FEATURE -----------------//
-function answerWriter() {
-  if (i < txt.length) {
-    document.getElementById("flashcard-container").innerHTML += txt.charAt(i);
-    i++;
-    setTimeout(answerWriter, speed);
-  }
-}
+// function answerWriter() {
+//   if (i < txt.length) {
+//     document.getElementById("flashcard-container").innerHTML += txt.charAt(i);
+//     i++;
+//     setTimeout(answerWriter, speed);
+//   }
+// }
 
 // while (speechOn) {
 //   if (txt == "Welcome...") {
@@ -157,6 +158,8 @@ function resetGame() {
   document.getElementById("logo-svg").style.display = "none";
   document.getElementById("copy-right").style.display = "none";
   document.getElementById("speech-bubble").style.display = "flex";
+  document.getElementById("flashcard-container").style.display = "none";
+  document.getElementById("navigation").style.display = "none";
   if (availableQuestions === undefined) {
     document.getElementById("reset").style.cursor = "not-allowed";
   } else {
@@ -167,14 +170,18 @@ function resetGame() {
     document.getElementById("css").style.display = "flex";
     document.getElementById("js").style.display = "flex";
     document.getElementById("html5").style.display = "flex";
-    document.getElementById("turtee-8").style.display = "grid";
+    document.getElementById("turtee-8").style.display = " flex";
     document.getElementById("turtee-explain").style.display = "none";
-    document.getElementById("flashcard-container").style.display = "none";
-    document.getElementById("navigation").style.display = "none";
+
     document.getElementById("dragonHackerButton").style.display = "none";
     document.getSelection("speech-bubble").style.display = "flex";
     document.getSelection("content-container").style.display = "flex";
   }
+}
+
+function playSoundEffect() {
+  let soundEffect = document.getElementById("sound-start");
+  soundEffect.play();
 }
 
 function hideButton(clickedButtonId) {
@@ -209,6 +216,7 @@ function showStartMenu() {
   document.getElementById("turtee-8").style.display = "flex";
   document.getElementById("cat-select").style.display = "flex";
   introduceGame();
+  playSoundEffect();
 }
 
 function introduceGame() {
