@@ -62,6 +62,8 @@ async function startGame(category) {
 function updateQuestionDisplay() {
   const currentQuestion = selectedCategoryQuestions[currentQuestionIndex];
 
+  console.log(currentQuestionIndex, selectedCategoryQuestions.length - 1);
+
   // currentQuestion.answer;
 
   const questionContainer = document.getElementById("flashcard-container");
@@ -74,6 +76,13 @@ function updateQuestionDisplay() {
       </svg>
     </div>
   `;
+  if (
+    (currentQuestionIndex + 1 == selectedCategoryQuestions.length - 1,
+    console.log(currentQuestionIndex, selectedCategoryQuestions.length))
+  ) {
+    currentQuestionIndex = 0;
+    resetGame();
+  }
 }
 
 //----------- NAVIGATE Q & A --------------------//
@@ -108,52 +117,59 @@ function nextQuestion() {
   }
 }
 //----------- CHANGE NAVIGATION ------------------//
+
 function updateNavigationButtons() {
   const prevButton = document.getElementById("prev-button");
   const answerButton = document.getElementById("answer-button");
   const nextButton = document.getElementById("next-button");
 
-  prevButton.disabled = currentQuestionIndex === 0;
-  if (prevButton.disabled === true) {
-    prevButton.style.cursor = "not-allowed";
-  } else {
-    prevButton.style.cursor = "pointer";
-  }
+  // Disable/enable prevButton and set cursor accordingly
+  const isFirstQuestion = currentQuestionIndex === 0;
+  prevButton.disabled = isFirstQuestion;
+  prevButton.style.cursor = isFirstQuestion ? "not-allowed" : "pointer";
+
+  // Enable answerButton
   answerButton.disabled = false;
-  nextButton.disabled =
+
+  // Disable/enable nextButton and set cursor accordingly
+  const isLastQuestion =
     currentQuestionIndex === categories[currentCategory].length - 1;
-  if (nextButton.disabled === true) {
-    nextButton.style.cursor = "not-allowed";
-  } else {
-    nextButton.style.cursor = "pointer";
+  nextButton.disabled = isLastQuestion;
+  nextButton.style.cursor = isLastQuestion ? "not-allowed" : "pointer";
+}
+
+// function updateNavigationButtons() {
+//   const prevButton = document.getElementById("prev-button");
+//   const answerButton = document.getElementById("answer-button");
+//   const nextButton = document.getElementById("next-button");
+
+//   prevButton.disabled = currentQuestionIndex === 0;
+//   if (prevButton.disabled === true) {
+//     prevButton.style.cursor = "not-allowed";
+//   } else {
+//     prevButton.style.cursor = "pointer";
+//   }
+//   answerButton.disabled = false;
+//   nextButton.disabled =
+//     currentQuestionIndex === categories[currentCategory].length - 1;
+//   if (nextButton.disabled === true) {
+//     nextButton.style.cursor = "not-allowed";
+//   } else {
+//     nextButton.style.cursor = "pointer";
+//   }
+// }
+
+//-------------- TYPING FEATURE -----------------//
+
+function typeWriter() {
+  if (i < txt.length) {
+    document.getElementById("cat-select").innerHTML += txt.charAt(i);
+    i++;
+    setTimeout(typeWriter, speed);
   }
 }
 
-//-------------- TYPING FEATURE -----------------//
-// function answerWriter() {
-//   if (i < txt.length) {
-//     document.getElementById("flashcard-container").innerHTML += txt.charAt(i);
-//     i++;
-//     setTimeout(answerWriter, speed);
-//   }
-// }
-
-// while (speechOn) {
-//   if (txt == "Welcome...") {
-//     txt = "I am Turtee dE Turtle.";
-//     typeWriter();
-//     speechOn = true;
-//   } else if (txt == "I am Turtee de Turtle") {
-//     txt = "I'll be your Study Mate.";
-//     typeWriter();
-//     speechOn = true;
-//   } else {
-//     txt = "Select a Category to begin";
-//     typeWriter();
-//     speechOn = false;
-//   }
-// }
-
+//------------ RESTART GAME ------------------//
 function resetGame() {
   document.getElementById("logo-svg").style.display = "none";
   document.getElementById("copy-right").style.display = "none";
@@ -185,14 +201,36 @@ function playSoundEffect() {
 }
 
 function hideButton(clickedButtonId) {
-  document.getElementById("welcome").style.display = "none";
-  document.getElementById("pre-footer-id").style.display = "none";
-  document.getElementById("dragonHackerButton").style.display = "none";
-  document.getElementById("turtee-8").style.display = "none";
-  document.getElementById("speech-bubble").style.display = "none";
-  document.getElementById("logo-svg").style.display = "none";
-  document.getElementById("copy-right").style.display = "none";
+  const elements = [
+    "welcome",
+    "pre-footer-id",
+    "dragonHackerButton",
+    "turtee-8",
+    "speech-bubble",
+    "logo-svg",
+    "copy-right",
+  ];
 
+  const elementsToKeep = {
+    html: ["css", "js"],
+    css: ["html5", "js"],
+    javascript: ["html5", "css"],
+  };
+
+  elements.forEach((id) => {
+    const element = document.getElementById(id);
+    if (
+      element &&
+      (!elementsToKeep[clickedButtonId] ||
+        !elementsToKeep[clickedButtonId].includes(id))
+    ) {
+      element.style.display = "none";
+    }
+  });
+
+  if (!elementsToKeep.hasOwnProperty(clickedButtonId)) {
+    console.log(clickedButtonId);
+  }
   if (clickedButtonId === "html") {
     document.getElementById("css").style.display = "none";
     document.getElementById("js").style.display = "none";
@@ -207,29 +245,103 @@ function hideButton(clickedButtonId) {
   }
 }
 
-function showStartMenu() {
-  document.getElementById("welcome").style.display = "none";
-  document.getElementById("start-button").style.display = "none";
-  document.getElementById("pre-footer-id").style.display = "flex";
-  document.getElementById("category-button").style.display = "flex";
-  document.getElementById("dragonHackerButton").style.display = "none";
-  document.getElementById("turtee-8").style.display = "flex";
-  document.getElementById("cat-select").style.display = "flex";
-  introduceGame();
-  playSoundEffect();
-}
+// ---------------- LOGIC ----------------------//
 
 function introduceGame() {
   setTimeout(typeWriter(), speed);
   document.getElementById("speech-bubble").style.display = "flex";
 }
 
-//------------ EXPERIMENTAL FEATURES -------------//
+function showStartMenu() {
+  const elements = [
+    { id: "welcome", display: "none" },
+    { id: "start-button", display: "none" },
+    { id: "pre-footer-id", display: "flex" },
+    { id: "category-button", display: "flex" },
+    { id: "dragonHackerButton", display: "none" },
+    { id: "turtee-8", display: "flex" },
+    { id: "cat-select", display: "flex" },
+  ];
 
-function typeWriter() {
-  if (i < txt.length) {
-    document.getElementById("cat-select").innerHTML += txt.charAt(i);
-    i++;
-    setTimeout(typeWriter, speed);
-  }
+  elements.forEach(({ id, display }) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.style.display = display;
+    }
+  });
+
+  introduceGame();
+  // playSoundEffect();
 }
+function runCode() {
+  // Get the code from the textarea
+  var code = document.getElementById("code-box").value;
+
+  // Get the iframe
+  var iframe = document.getElementById("resultFrame");
+
+  // Write the code into the iframe document
+  var iframeDoc = iframe.contentWindow.document;
+  iframeDoc.open();
+  iframeDoc.write(code);
+  iframeDoc.close();
+}
+//------------ EXPERIMENTAL FEATURES -------------//
+// function resetGame() {
+//   const elementsToHide = [
+//     "logo-svg",
+//     "copy-right",
+//     "flashcard-container",
+//     "navigation",
+//     "reset",
+//   ];
+
+//   const elementsToShow = [
+//     "speech-bubble",
+//     "category-button",
+//     "pre-footer-id",
+//     "css",
+//     "js",
+//     "html5",
+//     "turtee-8",
+//     "content-container",
+//   ];
+
+//   elementsToHide.forEach((id) => {
+//     const element = document.getElementById(id);
+//     if (element) {
+//       element.style.display = "none";
+//     }
+//   });
+
+//   elementsToShow.forEach((id) => {
+//     const element = document.getElementById(id);
+//     if (element) {
+//       element.style.display = "flex";
+//     }
+//   });
+
+//   if (availableQuestions === undefined) {
+//     const resetButton = document.getElementById("reset");
+//     if (resetButton) {
+//       resetButton.style.cursor = "not-allowed";
+//     }
+//   } else {
+//     const resetButton = document.getElementById("reset");
+//     if (resetButton) {
+//       resetButton.style.cursor = "pointer";
+//     }
+//     const elementsToMakeVisible = [
+//       "welcome",
+//       "speech-bubble",
+//       "turtee-explain",
+//     ];
+//     elementsToMakeVisible.forEach((id) => {
+//       const element = document.getElementById(id);
+//       if (element) {
+//         element.style.visibility = "visible";
+//       }
+//     });
+//     document.getElementById("dragonHackerButton").style.display = "none";
+//   }
+// }
