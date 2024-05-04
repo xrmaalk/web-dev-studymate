@@ -513,7 +513,7 @@ button#reset {
   border-style: none;
   font-weight: bold;
   width: 8rem;
-  margin: 0.3;
+  margin: 1rem;
   z-index: 1;
   cursor: pointer;
 }
