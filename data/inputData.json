@@ -86,7 +86,7 @@
     },
     {
       "question": "Congratulations!! You've Reach the end of the HTML Beta Section ",
-      "answer": " Press REST to Return the main menu... "
+      "answer": " Press F5 to Return the main menu... "
     }
   ],
   "css": [
@@ -128,7 +128,7 @@
     },
     {
       "question": "Congratulations!! You've Reach the end of the CSS Beta Section ",
-      "answer": " Press REST to Return the main menu... "
+      "answer": " Press F5 to Return the main menu... "
     }
   ],
   "javascript": [
@@ -222,7 +222,7 @@
     },
     {
       "question": "Congratulations!! You've Reach the end of the JavaScript Beta Section ",
-      "answer": " Press REST to Return the main menu... "
+      "answer": " Press F5 to Return the main menu... "
     }
   ]
 }
