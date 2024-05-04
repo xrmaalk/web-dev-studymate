@@ -60,27 +60,27 @@ async function startGame(category) {
 //------------ QUESTION AND ANSWERS -------------//
 function updateQuestionDisplay() {
   const currentQuestion = selectedCategoryQuestions[currentQuestionIndex]
-
-  console.log(currentQuestionIndex, selectedCategoryQuestions.length - 1)
-
-  // currentQuestion.answer;
-
   const questionContainer = document.getElementById("flashcard-container")
+
   questionContainer.innerHTML = `
     <h2 id="h2-tag">${currentQuestion.question}</h2>
     <div id="p-tag">${currentQuestion.answer}</div>
-    <div id="turtee-explain"  >
-      <svg class="turtee-global" >
+    <div id="turtee-explain">
+      <svg class="turtee-global">
         <image id="facing-turtee-img" xlink:href="./img/SVG/Asset_8_walking.svg" />
       </svg>
     </div>
   `
-  if (
-    (currentQuestionIndex + 1 == selectedCategoryQuestions.length - 1,
-    console.log(currentQuestionIndex, selectedCategoryQuestions.length))
-  ) {
-    currentQuestionIndex = 0
-    resetGame()
+
+  // Check if the current question is the last one in the category
+  if (currentQuestionIndex === selectedCategoryQuestions.length - 1) {
+    // Disable the Next button since there are no more questions
+    document.getElementById("next-button").disabled = true
+    document.getElementById("next-button").style.cursor = "not-allowed"
+  } else {
+    // Enable the Next button if not the last question
+    document.getElementById("next-button").disabled = false
+    document.getElementById("next-button").style.cursor = "pointer"
   }
 }
 
@@ -137,27 +137,6 @@ function updateNavigationButtons() {
   nextButton.style.cursor = isLastQuestion ? "not-allowed" : "pointer"
 }
 
-// function updateNavigationButtons() {
-//   const prevButton = document.getElementById("prev-button");
-//   const answerButton = document.getElementById("answer-button");
-//   const nextButton = document.getElementById("next-button");
-
-//   prevButton.disabled = currentQuestionIndex === 0;
-//   if (prevButton.disabled === true) {
-//     prevButton.style.cursor = "not-allowed";
-//   } else {
-//     prevButton.style.cursor = "pointer";
-//   }
-//   answerButton.disabled = false;
-//   nextButton.disabled =
-//     currentQuestionIndex === categories[currentCategory].length - 1;
-//   if (nextButton.disabled === true) {
-//     nextButton.style.cursor = "not-allowed";
-//   } else {
-//     nextButton.style.cursor = "pointer";
-//   }
-// }
-
 //-------------- TYPING FEATURE -----------------//
 
 function typeWriter() {
@@ -170,28 +149,24 @@ function typeWriter() {
 
 //------------ RESTART GAME ------------------//
 function resetGame() {
-  document.getElementById("logo-svg").style.display = "none"
-  document.getElementById("copy-right").style.display = "none"
-  document.getElementById("speech-bubble").style.display = "flex"
+  currentQuestionIndex = 0
   document.getElementById("flashcard-container").style.display = "none"
   document.getElementById("navigation").style.display = "none"
-  if (availableQuestions === undefined) {
-    document.getElementById("reset").style.cursor = "not-allowed"
-  } else {
-    document.getElementById("reset").style.cursor = "pointer"
-    document.getElementById("welcome").style.display = "hidden"
-    document.getElementById("category-button").style.visibility = "visible"
-    document.getElementById("pre-footer-id").style.visibility = "visible"
-    document.getElementById("css").style.display = "flex"
-    document.getElementById("js").style.display = "flex"
-    document.getElementById("html5").style.display = "flex"
-    document.getElementById("turtee-8").style.display = " flex"
-    document.getElementById("turtee-explain").style.display = "none"
+  document.getElementById("cat-select").style.display = "flex" // Show category selection
 
-    document.getElementById("dragonHackerButton").style.display = "none"
-    document.getSelection("speech-bubble").style.display = "flex"
-    document.getSelection("content-container").style.display = "flex"
-  }
+  // Reset all categories to visible
+  document.getElementById("html5").style.display = "flex"
+  document.getElementById("css").style.display = "flex"
+  document.getElementById("js").style.display = "flex"
+  document.getElementById("turtee-8").style.display = "flex"
+
+  document.getElementById("speech-bubble").style.display = "none"
+  document.getElementById("category-button").style.visibility = "visible"
+  document.getElementById("pre-footer-id").style.visibility = "visible"
+
+  // Clear any existing content in the flashcard container
+  document.getElementById("flashcard-container").innerHTML = ""
+  introduceGame() // Restart the game introduction
 }
 
 function playSoundEffect() {
