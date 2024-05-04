@@ -106,6 +106,11 @@ const categories = {
       answer:
         "<br/>What are comments.<br/><br/><b>Ex.</b><br/><b>( &lt;!-- multiline comments --&gt; )</b> <br/><b>( // Single line comment )</b>",
     },
+    {
+      question:
+        "Congratulations!! You've Reach the end of the HTML Beta Section ",
+      answer: " Press F5 to Return the main menu... ",
+    },
   ],
   css: [
     {
@@ -119,9 +124,9 @@ const categories = {
         "Selectors are patterns that are used to select and style HTML elements.<br> <br>They define the<b> target elements </b>for applying styles. <br><br><b>Ex.</b> .class or #id",
     },
     {
-      question: "What are Properties in css",
+      question: "In CSS ________ define the visual style of selected elements",
       answer:
-        "CSS properties define the visual style of selected elements.<br><br> They include attributes like color, font-size, margin, padding, etc.",
+        "What are Properties.<br><br> They include attributes like color, font-size, margin, padding, etc.",
     },
     {
       question:
@@ -158,8 +163,9 @@ const categories = {
         "What is <b>Positioning</b><br/><br/><b>Ex.</b><br/>Common values include static, relative, absolute and fixed. ",
     },
     {
-      question: " ",
-      answer: " ",
+      question:
+        "Congratulations!! You've Reach the end of the CSS Beta Section ",
+      answer: " Press F5 to Return the main menu... ",
     },
   ],
   javascript: [
@@ -178,21 +184,113 @@ const categories = {
         "<b>JavaScript has several data types:</b> <br> Number, String, Boolean, Object, and Array. <br><br> <b>Ex.</b> let name = 'Carla';<br> let age = 25;<br> let isStudent = true;",
     },
     {
-      question: "",
-      answer: "",
+      question:
+        "How does a JavaScript arrow function differ from a traditional function?",
+      answer:
+        "Arrow functions provide a concise syntax and inherit the 'this' value from the enclosing context, which is different from traditional functions that have their own 'this' context based on how they are called.",
     },
     {
-      question: "",
-      answer: "",
+      question: "What is a closure in JavaScript?",
+      answer:
+        "A closure is a feature in JavaScript where an inner function has access to the outer (enclosing) function’s variables, even after the outer function has returned.",
     },
     {
-      question: "",
-      answer: "",
+      question: "What is the purpose of modules in JavaScript?",
+      answer:
+        "Modules allow developers to divide their code into separate files, making it more organized and manageable, while also enabling code reuse and dependency management.",
+    },
+    {
+      question: "How do you select an HTML element by its ID using JavaScript?",
+      answer:
+        "You can select an HTML element by its ID using the 'document.getElementById('id')' method, where 'id' is the ID of the element.",
+    },
+    {
+      question: "What is event delegation in JavaScript?",
+      answer:
+        "Event delegation is a technique where a single event listener is added to a parent element instead of multiple listeners on child elements. This leverages event bubbling to handle events at a higher level in the DOM.",
+    },
+    {
+      question: "What is a Promise in JavaScript?",
+      answer:
+        "A Promise is an object representing the eventual completion or failure of an asynchronous operation, providing methods to handle the success or failure.",
+    },
+    {
+      question: "How do you handle exceptions in JavaScript?",
+      answer:
+        "Exceptions in JavaScript can be handled using the 'try...catch' statement, where 'try' wraps code that might throw an exception and 'catch' is used to handle the error.",
+    },
+    {
+      question: "What is polymorphism in JavaScript?",
+      answer:
+        "Polymorphism in JavaScript refers to the concept that objects of different classes can be treated as objects of a common superclass, particularly when they share a method with the same name but potentially different implementations.",
+    },
+    {
+      question: "How does prototypal inheritance work in JavaScript?",
+      answer:
+        "In JavaScript, objects can inherit properties and methods from other objects. This is done through the prototype object, where each object can have a prototype and inherit properties and methods from it.",
+    },
+    {
+      question: "What does AJAX stand for and how is it used in JavaScript?",
+      answer:
+        "AJAX stands for Asynchronous JavaScript and XML. It's a technique for creating fast and dynamic web pages, allowing for asynchronous updates to a web page without reloading the entire page.",
+    },
+    {
+      question: "What are some popular JavaScript frameworks?",
+      answer:
+        "Some popular JavaScript frameworks include React, Angular, and Vue.js. These frameworks help in building complex user interfaces and single-page applications.",
+    },
+    {
+      question: "What are template literals in JavaScript?",
+      answer:
+        "Template literals are string literals allowing embedded expressions, which can be used for multi-line strings and string interpolation. They are denoted by backticks (`).",
+    },
+    {
+      question: "What is WebAssembly and how does it interact with JavaScript?",
+      answer:
+        "WebAssembly is a low-level, binary instruction format that provides a way to run code written in multiple languages on the web at near-native speed, with JavaScript acting as the glue language to integrate WebAssembly modules in web applications.",
+    },
+    {
+      question: "What is a unit test in JavaScript?",
+      answer:
+        "A unit test in JavaScript is a way to test individual parts of the application code to ensure they work correctly, typically using frameworks like Jest or Mocha.",
+    },
+    {
+      question: "What is Cross-Site Scripting (XSS)?",
+      answer:
+        "Cross-Site Scripting (XSS) is a security vulnerability that allows attackers to inject malicious scripts into content from otherwise trusted websites.",
+    },
+    {
+      question:
+        "How can you improve the performance of a JavaScript web application?",
+      answer:
+        "Performance can be improved by optimizing code, reducing DOM manipulations, minimizing reflows and repaints, lazy loading images and scripts, and using Web Workers for intensive tasks.",
+    },
+    {
+      question:
+        "What is the difference between a Web Worker and a Service Worker?",
+      answer:
+        "Web Workers allow for running scripts in the background without affecting the performance of the page, while Service Workers act as a proxy server that enables features such as push notifications and background sync in web applications.",
+    },
+    {
+      question:
+        "What is Redux and how is it used for state management in JavaScript?",
+      answer:
+        "Redux is a predictable state container for JavaScript apps, often used with React. It helps manage the state of an application in a single immutable state object.",
+    },
+    {
+      question: "What makes a web application a Progressive Web App (PWA)?",
+      answer:
+        "PWAs are web applications that use modern web capabilities to deliver an app-like experience to users. These include features like offline support, background sync, and push notifications.",
+    },
+    {
+      question:
+        "Congratulations!! You've Reach the end of the JavaScript Beta Section ",
+      answer: " Press F5 to Return the main menu... ",
     },
   ],
-};
+}
 
-export default categories;
+export default categories
 /**
  * HTML CONTENT
  * HTML (Hypertext Markup Language):
